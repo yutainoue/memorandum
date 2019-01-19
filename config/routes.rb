@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   get 'memo/edit'
-  root 'memo#index'
+  root 'memo#edit'
   resources :memo, only: 'edit'
 end
