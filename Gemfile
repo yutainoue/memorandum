@@ -16,7 +16,16 @@ gem 'mysql2'
 
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
+  gem 'guard-rspec'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'seed-fu'
+  gem 'spring-commands-rspec'
+  gem 'xray-rails'
 end
 
 group :development do
