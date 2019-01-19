@@ -1,2 +1,11 @@
 %h1 Memo#edit
-%p Find me in app/views/memo/edit.html.erb
+
+= form_for @memo do |f|
+  %div
+    = f.label :title
+    = f.text_field :title
+  %div
+    = f.label :text
+    = f.text_area :text
+  %div
+    = f.submit '更新'
