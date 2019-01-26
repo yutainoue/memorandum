@@ -15,6 +15,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'mysql2'
 gem 'haml-rails'
 gem 'action_args'
+gem 'webpacker', github: 'rails/webpacker'
+gem 'rb-readline'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
