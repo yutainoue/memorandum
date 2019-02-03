@@ -1,4 +1,8 @@
 class MemoController < ApplicationController
+  def index
+    @memos = Memo.all
+  end
+
   def edit(id)
     @memo = Memo.find(id)
   end

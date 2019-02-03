@@ -1,0 +1,6 @@
+%h1 Memo#index
+
+%ul
+  - @memos.each do |memo|
+    %li
+      =link_to memo.title, edit_memo_path(memo.id)
