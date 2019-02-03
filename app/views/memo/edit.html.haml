@@ -1,13 +1,14 @@
 %h1 Memo#edit
 
+.title
+  %textarea{ "v-model" => "title" }
+    = @memo.title
+  %div
+    {{ title }}
 
-%textarea{ "v-model" => "title" }
-  = @memo.title
-
-.editor
+.text
   %textarea{":value" => "input", "@input" => "update"}
-    = @memo.text
-  
-  %div{"v-html" => "compiledMarkdown"}
+    = @memo.text  
+  %div{"v-html" => "markdownText"}
 
 = javascript_pack_tag 'hello_vue'

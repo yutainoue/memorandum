@@ -18,27 +18,34 @@ var save = new Vue({
     a: function(c) {
       if (c <= 0) {
         axios.put('/memo/1',{
-          title: document.querySelector("[v-model='title']").value,
-          text:  document.querySelector(".editor>textarea").value
+          title: document.querySelector(".title>textarea").value,
+          text:  document.querySelector(".text>textarea").value
         })  
       }
     }
   }
 })
 
-new Vue({
-  el: '.editor',
+var text = new Vue({
+  el: '.text',
   data: {
-    input: document.querySelector(".editor>textarea").value
+    input: document.querySelector(".text>textarea").value
   },
   computed: {
-    compiledMarkdown: function () {
+    markdownText: function () {
       return marked(this.input)
     }
   },
   methods: {
-    update: _.debounce(function (e) {
+    update: function (e) {
       this.input = e.target.value
-    }, 300)
+    }
+  }
+})
+
+var title = new Vue({
+  el: '.title',
+  data: {
+    title: document.querySelector(".title>textarea").value
   }
 })
