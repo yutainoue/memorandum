@@ -4,7 +4,9 @@
   "dependencies": {
     "@rails/webpacker": "https://github.com/rails/webpacker",
     "axios": "^0.18.0",
+    "marked": "^0.6.0",
     "qs": "^6.6.0",
+    "underscore": "^1.9.1",
     "vue": "^2.5.22",
     "vue-loader": "^15.5.1",
     "vue-template-compiler": "^2.5.22"

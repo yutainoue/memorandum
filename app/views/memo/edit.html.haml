@@ -1,11 +1,14 @@
 %h1 Memo#edit
 
-= form_for @memo do |f|
+.title
+  %textarea{ "v-model" => "title" }
+    = @memo.title
   %div
-    = f.label :title
-    = f.text_field :title, { "v-model" => "title" }
-  %div
-    = f.label :text
-    = f.text_area :text, { "v-model" => "text" }
+    {{ title }}
+
+.text
+  %textarea{":value" => "input", "@input" => "update"}
+    = @memo.text  
+  %div{"v-html" => "markdownText"}
 
 = javascript_pack_tag 'hello_vue'
