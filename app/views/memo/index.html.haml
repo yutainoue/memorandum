@@ -4,3 +4,7 @@
   - @memos.each do |memo|
     %li
       =link_to memo.title, edit_memo_path(memo.id)
+      =link_to '削除', memo_path(memo.id), method: :delete
+
+%div
+  =link_to '新規作成', new_memo_path
