@@ -1,10 +1,18 @@
 %h1 Memo#index
 
-%ul
-  - @memos.each do |memo|
-    %li
-      =link_to memo.title, edit_memo_path(memo.id)
-      =link_to '削除', memo_path(memo.id), method: :delete
+.preview
+  %ul
+    - @memos.each_with_index do |memo, id|
+      %li
+        %div{ "v-on:click" => "preview( '#{safe_join(memo.text.split("\n"), tag(:br))}' )" }
+          = memo.title
+        = link_to '編集', edit_memo_path(memo.id), {"v-on:click" => "preview"}
+        = link_to '削除', memo_path(memo.id), method: :delete
 
-%div
+  %div{"v-html" => "markdownText"}
+    {{ msg }}
+
+%div  
   =link_to '新規作成', new_memo_path
+
+  = javascript_pack_tag 'memo_index'

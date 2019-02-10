@@ -42,10 +42,3 @@ var text = new Vue({
     }
   }
 })
-
-var title = new Vue({
-  el: '.title',
-  data: {
-    title: document.querySelector(".title>textarea").value
-  }
-})
