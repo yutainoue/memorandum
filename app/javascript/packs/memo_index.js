@@ -8,7 +8,7 @@ import qs from 'qs'
 var app5 = new Vue({
   el: '.preview',
   data: {
-    msg: '# msg'
+    msg: document.getElementById(0).value
   },
   computed: {
     markdownText: function () {
@@ -16,16 +16,14 @@ var app5 = new Vue({
     }
   },
   methods: {
-    preview: function (memo_text) {
-      this.msg = memo_text
+    preview: function (id) {
+      this.msg = document.getElementById(id).value
     }
   }
 })
 
-//debugger
-
-//this.$el.id
-
+//問題
+//  更新日付を自動更新したい
 
 
 

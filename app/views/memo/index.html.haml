@@ -4,12 +4,13 @@
   %ul
     - @memos.each_with_index do |memo, id|
       %li
-        %div{ "v-on:click" => "preview( '#{safe_join(memo.text.split("\n"), tag(:br))}' )" }
+        %div{ "v-on:click" => "preview(#{id})"}
           = memo.title
         = link_to '編集', edit_memo_path(memo.id), {"v-on:click" => "preview"}
         = link_to '削除', memo_path(memo.id), method: :delete
+        = hidden_field_tag id, memo.text
 
-  %div{"v-html" => "markdownText"}
+  %div{"v-html" => "markdownText", "style" => "white-space:pre-wrap;"}
     {{ msg }}
 
 %div  

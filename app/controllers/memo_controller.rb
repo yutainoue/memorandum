@@ -12,8 +12,8 @@ class MemoController < ApplicationController
     @memo = Memo.find(id)
   end
 
-  def update(id, memo)
-    @memo = Memo.find(id)
+  def update(memo)
+    @memo = Memo.find(request.env["HTTP_REFERER"].split("/")[-2].to_i)
     @memo.update(memo.permit(:title, :text))
     redirect_to edit_memo_path
   end
